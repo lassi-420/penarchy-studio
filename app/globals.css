@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   PENARCHY STUDIO — Design tokens
+   Black-luxury, editorial, artisan-metalwork visual system.
+============================================================================ */
+
+:root {
+  /* surfaces */
+  --color-ink: #070707;
+  --color-ink-2: #0b0b0b;
+  --color-ink-3: #101010;
+  --color-surface: #151515;
+  --color-surface-2: #1a1a1a;
+  --color-surface-3: #202020;
+
+  /* borders */
+  --color-border: #292929;
+  --color-border-strong: #333333;
+
+  /* text */
+  --color-text: #f2f0eb;
+  --color-text-muted: #a5a29c;
+  --color-text-faint: #77746e;
+
+  /* brass / metal accent */
+  --color-brass: #b08d57;
+  --color-brass-light: #d1ae72;
+  --color-brass-dim: #c19a61;
+  --color-copper: #b8724f;
+
+  --font-display: Georgia, "Times New Roman", ui-serif, serif;
+  --font-sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-2: var(--color-ink-2);
+  --color-ink-3: var(--color-ink-3);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-surface-3: var(--color-surface-3);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-faint: var(--color-text-faint);
+  --color-brass: var(--color-brass);
+  --color-brass-light: var(--color-brass-light);
+  --color-brass-dim: var(--color-brass-dim);
+  --color-copper: var(--color-copper);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-ink);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* thin gold underline used for nav links / editorial accents */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: var(--color-brass);
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-brass-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
